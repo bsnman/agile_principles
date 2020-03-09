@@ -1,0 +1,39 @@
+.slide-left-enter-active {
+    animation: slide-left 1s;
+}
+
+.slide-left-leave-active {
+    animation: slide-left 1s reverse;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(0vw);
+    }
+}
+
+.slide-left-delay-enter-active {
+    animation: slide-left 2s;
+}
+
+.slide-left-delay-leave-active {
+    animation: slide-left 2s reverse;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    50% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(0vw);
+    }
+}
