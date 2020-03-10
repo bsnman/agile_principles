@@ -1,12 +1,17 @@
 <template>
-  <div class="first">
-    <transition name="slide-left">
-      <p v-if="showTitle" class="message-title">{{ principle.title }}</p>
-    </transition>
-
-    <transition name="slide-left-delay">
-      <p v-if="showDescription" class="message-description">{{ principle.description }}</p>
-    </transition>
+  <div class="second">
+    <div class="card">
+      <div class="card-header">
+        <transition name="zoom">
+          <p v-if="showTitle" class="message-title">{{ principle.title }}</p>
+        </transition>
+      </div>
+      <transition name="curtain-down">
+        <div v-if="showDescription" class="card-content">
+          <p class="message-description">{{ principle.description }}</p>
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -31,11 +36,9 @@ export default class First extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.first {
+.second {
   height: calc(100% - 68px);
   padding-bottom: 68px;
-  padding-left: calc(20px + 5vw);
-  padding-right: calc(20px + 5vw);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,5 +53,27 @@ export default class First extends Vue {
 .message-description {
   font-size: 30px;
   max-width: 800px;
+  margin: 20px 0px;
+}
+
+.card {
+  border: 1px solid #dcdee2;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 1px #00000011;
+
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 3px 6px 3px #00000011;
+}
+
+.card-header {
+  padding: 20px 50px;
+  border-bottom: 1px solid #dcdee2;
+}
+
+.card-content {
+  padding: 0px 50px;
 }
 </style>

@@ -1,0 +1,21 @@
+.zoom-enter-active {
+    animation: zoom 0.5s;
+}
+
+.zoom-leave-active {
+    animation: zoom 0.5s reverse;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(0, 0)
+    }
+
+    90% {
+        transform: scale(1.05, 1.05)
+    }
+
+    100% {
+        transform: scale(1, 1)
+    }
+}

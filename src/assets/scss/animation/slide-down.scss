@@ -1,0 +1,19 @@
+.slide-down-enter-active {
+    animation: slide-down 0.8s;
+    animation-timing-function: ease-out;
+}
+
+.slide-down-leave-active {
+    animation: slide-down 0.8s reverse;
+    animation-timing-function: ease-out;
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100vh);
+    }
+
+    100% {
+        transform: translateY(0vh);
+    }
+}

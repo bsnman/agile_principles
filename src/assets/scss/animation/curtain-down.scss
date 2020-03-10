@@ -1,0 +1,23 @@
+.curtain-down-enter-active {
+    animation: curtain-down 1s;
+    overflow: hidden;
+}
+
+.curtain-down-leave-active {
+    animation: curtain-down 1s reverse;
+    overflow: hidden;
+}
+
+@keyframes curtain-down {
+    0% {
+        height: 0%
+    }
+
+    30% {
+        height: 0%
+    }
+
+    100% {
+        height: 100%;
+    }
+}

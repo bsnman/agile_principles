@@ -4,6 +4,9 @@
       <p v-if="showTitle" class="message-title">{{ principle.title }}</p>
     </transition>
 
+    <br/>
+    <br/>
+
     <transition name="slide-left-delay">
       <p v-if="showDescription" class="message-description">{{ principle.description }}</p>
     </transition>

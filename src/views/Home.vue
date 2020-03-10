@@ -18,15 +18,37 @@ import principles from "../constants/principles.json";
 
 import First from "../components/Principles/First.vue";
 import Second from "../components/Principles/Second.vue";
+import Third from "../components/Principles/Third.vue";
+import Fourth from "../components/Principles/Fourth.vue";
+import Fifth from "../components/Principles/Fifth.vue";
 
 @Component({
   components: {
     First,
-    Second
+    Second,
+    Third,
+    Fourth,
+    Fifth
   }
 })
 export default class Home extends Vue {
-  page = 0
+
+  get page(): number {
+    const page = this.$route.query.page
+
+    if(typeof page !== "string") {
+      return 0
+    }
+
+    return parseInt(page)
+  }
+  set page(v) {
+    const query = {
+      page: v.toString()
+    }
+    this.$router.replace({ query })
+  }
+  
 
   get principles() {
     return principles
@@ -59,6 +81,9 @@ export default class Home extends Vue {
   position: relative;
   height: 100%;
   overflow: hidden;
+
+  padding-left: calc(40px + 5vw);
+  padding-right: calc(40px + 5vw);
 }
 
 .chevron {
