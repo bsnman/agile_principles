@@ -4,11 +4,13 @@
       <font-awesome-icon icon="chevron-left"></font-awesome-icon>
     </div>
 
-    <component v-bind:is="principle.component" :principle="principle" />
-
     <div @click="moveRight" class="chevron chevron--right" v-show="page < 11">
       <font-awesome-icon icon="chevron-right"></font-awesome-icon>
     </div>
+
+    <component v-bind:is="principle.component" :principle="principle" />
+
+    <PagePicker @page-select="onPageSelect" :currentPage="page" :limit="principles.length" />
   </div>
 </template>
 
@@ -29,6 +31,8 @@ import Tenth from "../components/Principles/Tenth.vue";
 import Eleventh from "../components/Principles/Eleventh.vue";
 import Twelfth from "../components/Principles/Twelfth.vue";
 
+import PagePicker from "../components/PagePicker.vue";
+
 @Component({
   components: {
     First,
@@ -42,34 +46,33 @@ import Twelfth from "../components/Principles/Twelfth.vue";
     Ninth,
     Tenth,
     Eleventh,
-    Twelfth
+    Twelfth,
+    PagePicker
   }
 })
 export default class Home extends Vue {
-
   get page(): number {
-    const page = this.$route.query.page
+    const page = this.$route.query.page;
 
-    if(typeof page !== "string") {
-      return 0
+    if (typeof page !== "string") {
+      return 0;
     }
 
-    return parseInt(page)
+    return parseInt(page);
   }
   set page(v) {
     const query = {
       page: v.toString()
-    }
-    this.$router.replace({ query })
+    };
+    this.$router.replace({ query });
   }
-  
 
   get principles() {
-    return principles
+    return principles;
   }
 
   get principle() {
-    return this.principles[this.page]
+    return this.principles[this.page];
   }
 
   moveLeft() {
@@ -79,7 +82,7 @@ export default class Home extends Vue {
 
     this.page = this.page - 1;
   }
-  
+
   moveRight() {
     if (this.page >= 11) {
       return;
@@ -90,6 +93,10 @@ export default class Home extends Vue {
     }
 
     this.page = this.page + 1;
+  }
+
+  onPageSelect(page: number) {
+    this.page = page;
   }
 }
 </script>
@@ -119,7 +126,7 @@ export default class Home extends Vue {
 
 .chevron:hover {
   opacity: 1;
-  color:#3F85ED;
+  color: #3f85ed;
 }
 
 .chevron--left {

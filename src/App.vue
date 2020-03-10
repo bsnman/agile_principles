@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="header">
-      <h2>Agile Principles</h2>
+      <h1>Agile Principles</h1>
     </div>
 
     <div class="content">
@@ -21,7 +21,7 @@
 
 .content {
   width: 100vw;
-  height: calc(100vh - 68px);
+  height: calc(100vh - 90px);
 }
 
 .header {
