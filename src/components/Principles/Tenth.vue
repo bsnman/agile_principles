@@ -1,13 +1,13 @@
 <template>
   <div class="first">
-    <transition name="slide-left">
+    <transition name="flip">
       <p v-if="showTitle" class="message-title">{{ principle.title }}</p>
     </transition>
 
     <br/>
     <br/>
 
-    <transition name="slide-left-delay">
+    <transition name="slideLeft">
       <p v-if="showDescription" class="message-description">{{ principle.description }}</p>
     </transition>
   </div>

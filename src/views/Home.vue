@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <div @click="moveLeft" class="chevron chevron--left">
+    <div @click="moveLeft" class="chevron chevron--left" v-show="page > 0">
       <font-awesome-icon icon="chevron-left"></font-awesome-icon>
     </div>
 
     <component v-bind:is="principle.component" :principle="principle" />
 
-    <div @click="moveRight" class="chevron chevron--right">
+    <div @click="moveRight" class="chevron chevron--right" v-show="page < 11">
       <font-awesome-icon icon="chevron-right"></font-awesome-icon>
     </div>
   </div>
@@ -21,6 +21,13 @@ import Second from "../components/Principles/Second.vue";
 import Third from "../components/Principles/Third.vue";
 import Fourth from "../components/Principles/Fourth.vue";
 import Fifth from "../components/Principles/Fifth.vue";
+import Sixth from "../components/Principles/Sixth.vue";
+import Seventh from "../components/Principles/Seventh.vue";
+import Eighth from "../components/Principles/Eighth.vue";
+import Ninth from "../components/Principles/Ninth.vue";
+import Tenth from "../components/Principles/Tenth.vue";
+import Eleventh from "../components/Principles/Eleventh.vue";
+import Twelfth from "../components/Principles/Twelfth.vue";
 
 @Component({
   components: {
@@ -28,7 +35,14 @@ import Fifth from "../components/Principles/Fifth.vue";
     Second,
     Third,
     Fourth,
-    Fifth
+    Fifth,
+    Sixth,
+    Seventh,
+    Eighth,
+    Ninth,
+    Tenth,
+    Eleventh,
+    Twelfth
   }
 })
 export default class Home extends Vue {
@@ -67,6 +81,10 @@ export default class Home extends Vue {
   }
   
   moveRight() {
+    if (this.page >= 11) {
+      return;
+    }
+
     if (this.page >= this.principles.length) {
       return;
     }
@@ -96,11 +114,12 @@ export default class Home extends Vue {
 
   opacity: 0.3;
   background: transparent;
-  transition: opacity 0.3s, background 0.3s;
+  transition: opacity 0.3s, background 0.3s, color 0.3s;
 }
 
 .chevron:hover {
   opacity: 1;
+  color:#3F85ED;
 }
 
 .chevron--left {
@@ -112,7 +131,7 @@ export default class Home extends Vue {
 }
 
 .chevron--left:hover {
-  background: linear-gradient(90deg, #00000016, #00000000);
+  background: linear-gradient(90deg, #00000020, #00000000);
 }
 
 .chevron--right {
@@ -124,6 +143,6 @@ export default class Home extends Vue {
 }
 
 .chevron--right:hover {
-  background: linear-gradient(-90deg, #00000016, #00000000);
+  background: linear-gradient(-90deg, #00000020, #00000000);
 }
 </style>

@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    
-    <h2> Agile Princples </h2>
+    <div class="header">
+      <h2>Agile Principles</h2>
+    </div>
 
     <div class="content">
-      <router-view/>
+      <router-view />
     </div>
   </div>
 </template>
@@ -21,5 +22,11 @@
 .content {
   width: 100vw;
   height: calc(100vh - 68px);
+}
+
+.header {
+  padding: 5px;
+  background: #3F85ED;
+  color: white;
 }
 </style>

@@ -1,9 +1,9 @@
 .slide-left-enter-active {
-    animation: slide-left 1s;
+    animation: slide-left 0.7s;
 }
 
 .slide-left-leave-active {
-    animation: slide-left 1s reverse;
+    animation: slide-left 0.7s reverse;
 }
 
 @keyframes slide-left {
@@ -17,11 +17,11 @@
 }
 
 .slide-left-delay-enter-active {
-    animation: slide-left 2s;
+    animation: slide-left 1.4s;
 }
 
 .slide-left-delay-leave-active {
-    animation: slide-left 2s reverse;
+    animation: slide-left 1.4s reverse;
 }
 
 @keyframes slide-left {

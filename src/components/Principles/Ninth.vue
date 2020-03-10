@@ -1,13 +1,13 @@
 <template>
   <div class="first">
-    <transition name="slide-left">
+    <transition name="zoomUp">
       <p v-if="showTitle" class="message-title">{{ principle.title }}</p>
     </transition>
 
     <br/>
     <br/>
 
-    <transition name="slide-left-delay">
+    <transition name="zoomUp">
       <p v-if="showDescription" class="message-description">{{ principle.description }}</p>
     </transition>
   </div>
@@ -51,5 +51,7 @@ export default class First extends Vue {
 .message-description {
   font-size: 30px;
   max-width: 800px;
+
+  animation-delay: 0.3s;
 }
 </style>

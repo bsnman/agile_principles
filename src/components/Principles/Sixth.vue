@@ -1,6 +1,6 @@
 <template>
-  <div class="fifth">
-    <transition name="fadeLeft">
+  <div class="sixth">
+    <transition name="zoomLeft">
       <div v-if="showCard" class="collapsible">
         <div class="collapsible-header">
           <p class="message-title">{{ principle.title }}</p>
@@ -34,7 +34,7 @@ export default class First extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.fifth {
+.sixth {
   height: calc(100% - 68px);
   padding-bottom: 68px;
   display: flex;
